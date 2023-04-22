@@ -1,0 +1,8 @@
+#load owl.ppm and call it 'owl'
+load res/owl.ppm owl
+
+#brighten owl by adding 10
+brighten 10 owl owl-test
+
+#save brighter image
+save test/images/owl-test.ppm owl-test

@@ -1,0 +1,131 @@
+#load owl.ppm and call it 'owl'
+load res/owl.ppm owl
+
+#brighten owl by adding 10
+brighten 10 owl owl-brighter
+
+#save brighter image
+save test/images/owl-brighter.ppm owl-brighter
+
+#flip image vertically
+vertical-flip owl owl-vertical
+
+#save vertical flipped image
+save test/images/owl-vertical.ppm owl-vertical
+
+#flip the vertically flipped owl horizontally
+horizontal-flip owl-vertical owl-vertical-horizontal
+
+#save vertical horizontally image
+save test/images/owl-vertical-horizontal.ppm owl-vertical-horizontal
+
+#create a greyscale using only the red component, as an image owl-greyscale-red
+greyscale red-component owl owl-greyscale-red
+
+#save greyscale red component image
+save test/images/owl-greyscale-red.ppm owl-greyscale-red
+
+#create a greyscale using only the green component, as an image owl-greyscale-green
+greyscale green-component owl owl-greyscale-green
+
+#save greyscale green component image
+save test/images/owl-greyscale-green.ppm owl-greyscale-green
+
+#create a greyscale using only the blue component, as an image owl-greyscale-blue
+greyscale blue-component owl owl-greyscale-blue
+
+#save greyscale blue component image
+save test/images/owl-greyscale-blue.ppm owl-greyscale-blue
+
+#create a greyscale using only the luma component, as an image owl-greyscale-luma
+greyscale luma-component owl owl-greyscale-luma
+
+#save greyscale luma component image
+save test/images/owl-greyscale-luma.ppm owl-greyscale-luma
+
+#create a greyscale using only the intensity component, as an image owl-greyscale-luma
+greyscale intensity-component owl owl-greyscale-intensity
+
+#save greyscale intensity component image
+save test/images/owl-greyscale-intensity.ppm owl-greyscale-intensity
+
+#create a greyscale using only the value component, as an image owl-greyscale
+greyscale value-component owl owl-greyscale-value
+
+#save greyscale value component image
+save test/images/owl-greyscale-value.ppm owl-greyscale-value
+
+#splitting the image
+rgb-split owl owl-red owl-green owl-blue
+
+#save red splitted image
+save test/images/owl-red.ppm owl-red
+
+#save green splitted image
+save test/images/owl-green.ppm owl-green
+
+#save blue splitted image
+save test/images/owl-blue.ppm owl-blue
+
+#combine them back, but by using the brightened red we get a red tint
+rgb-combine owl-red-tint owl-red owl-green owl-blue
+
+#save the combined image.
+save test/images/owl-red-tint.ppm owl-red-tint
+
+#filter the owl image as blur
+filter blur owl owl-blur
+
+#save the blurred image
+save test/images/owl-blur.ppm owl-blur
+
+#filter the owl image as sharpe
+filter sharpe owl owl-sharper
+
+#save the sharpen image
+save test/images/owl-sharper.ppm owl-sharper
+
+#color transforming the image as greyscale
+color-transformation greyscale owl owl-ct-greyscale
+
+#save the color transformed greyscale image.
+save test/images/owl-ct-greyscale.ppm owl-ct-greyscale
+
+#color transforming the image as greyscale
+color-transformation sepia owl owl-ct-sepia
+
+#save the color transformed greyscale image.
+save test/images/owl-ct-sepia.ppm owl-ct-sepia
+
+#dither the image
+dither owl owl-dither
+
+#save the dithered image
+save test/images/owl-dither.ppm owl-dither
+
+#saving the loaded owl image from ppm to png
+save test/images/owl-png.png owl
+
+#load a png file
+load res/owl-png.png owl-png2
+
+#darken owl by adding 10
+brighten -10 owl-png2 owl-png2-darken
+
+#saving the loaded owl image from ppm to jpg
+save test/images/owl-png2-darken.jpg owl-png2-darken
+
+#load a jpg file
+load res/owl-jpg.jpg owl-jpg2
+
+#load a bmp file
+load res/owl-bmp.bmp owl-bmp2
+
+#saving the loaded owl image from ppm to jpg
+save test/images/owl-jpg.jpg owl
+
+#saving the loaded owl image from ppm to bmp
+save test/images/owl-bmp.bmp owl
+
+#run the command script file
+run res/test-command-script.txt

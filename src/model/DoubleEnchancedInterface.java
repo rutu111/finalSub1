@@ -4,7 +4,7 @@ package model;
  * This interface is to incorporate the newest edition of this
  * program.
  */
-public interface DoubleEnchancedInterface extends ModelInterface {
+public interface DoubleEnchancedInterface extends EnhancedModelInterface {
 
   /**
    * This operation is used to Mosaic an image.

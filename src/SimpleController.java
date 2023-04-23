@@ -1,9 +1,12 @@
+import controller.DoubleEnhanceController;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import controller.EnhanceController;
 import controller.GUIBasedController;
 import controller.ImageController;
+import model.DoubleEnchancedInterface;
+import model.DoubleEnchancedModel;
 import model.EnhancedModel;
 import model.EnhancedModelInterface;
 import view.ImageView;
@@ -30,10 +33,9 @@ public class SimpleController {
    */
   public static void main(String[] args) {
 
-
     String variableName = null;
     String value = null;
-    EnhancedModelInterface model = new EnhancedModel();
+    DoubleEnchancedInterface model = new DoubleEnchancedModel();
     ImageView view = new ImageViewImpl();
 
     if (args.length != 0) {
@@ -42,18 +44,15 @@ public class SimpleController {
           // This is a command line argument
           variableName = args[i].substring(1); // Remove the leading '-'
           if (variableName.equals("file")) {
-
             value = args[++i];
             String input = "run " + value + "\r\nexit";
             InputStream in = new ByteArrayInputStream(input.getBytes());
-
-            ImageController controller = new EnhanceController(model, view, in, System.out);
+            ImageController controller = new DoubleEnhanceController(model, view, in, System.out);
             controller.executeController();
           } else {
-            ImageController controller = new EnhanceController(model, view, System.in, System.out);
+            ImageController controller = new DoubleEnhanceController(model, view, System.in, System.out);
             controller.executeController();
           }
-
         }
       }
     } else {

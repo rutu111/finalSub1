@@ -1,5 +1,6 @@
 package controller;
 
+import model.DoubleEnchancedInterface;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.awt.image.BufferedImage;
@@ -15,13 +16,13 @@ import view.JFrameView;
  * A GUI based controlled to support delegation of task to the graphical
  * user interface.
  */
-public class GUIBasedController extends EnhanceController implements Features {
+public class GUIBasedController extends DoubleEnhanceController implements Features {
 
   private final static String currImgName = "CurrentImage";
   private final static String redCurrImgName = "RedCurrentImage";
   private final static String greenCurrImgName = "GreenCurrentImage";
   private final static String blueCurrImgName = "BlueCurrentImage";
-  private final EnhancedModelInterface model2;
+  private final DoubleEnchancedInterface model2;
   private JFrameView jFrameview;
 
   /**
@@ -33,7 +34,7 @@ public class GUIBasedController extends EnhanceController implements Features {
    * @param in    the input stream
    * @param out   the output stream
    */
-  public GUIBasedController(EnhancedModelInterface model,
+  public GUIBasedController(DoubleEnchancedInterface model,
                             ImageView view, InputStream in, OutputStream out) {
     super(model, view, in, out);
     this.model2 = model;

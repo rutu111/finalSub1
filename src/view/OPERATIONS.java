@@ -20,7 +20,6 @@ public enum OPERATIONS {
   GREYSCALE("color-transformation greyscale"),
   SEPIA("color-transformation sepia"),
   DITHER("dither"),
-
   Mosaicking("mosaicking");
 
   private final String operationCmd;

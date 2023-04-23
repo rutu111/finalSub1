@@ -2,13 +2,10 @@ import controller.DoubleEnhanceController;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import controller.EnhanceController;
 import controller.GUIBasedController;
 import controller.ImageController;
 import model.DoubleEnchancedInterface;
 import model.DoubleEnchancedModel;
-import model.EnhancedModel;
-import model.EnhancedModelInterface;
 import view.ImageView;
 import view.ImageViewImpl;
 import view.JFrameViewImpl;

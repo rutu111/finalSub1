@@ -21,7 +21,7 @@ public class DoubleEnhanceControllerTest extends EnhanceControllerTest{
    */
   @Test
   public void MosaicWorks() {
-    String input = "mosaicking 100 owl owl-mosaic";
+    String input = "mosaicking 1000 owl owl-mosaic";
     InputStream in = new ByteArrayInputStream(input.getBytes());
     OutputStream out = new ByteArrayOutputStream();
     StringBuilder sb = new StringBuilder();
@@ -33,11 +33,11 @@ public class DoubleEnhanceControllerTest extends EnhanceControllerTest{
   }
 
   /**
-   * JUnit mock test to check if filter blur method is working correctly.
+   * JUnit mock test to check if mosaic method throws an exception.
    */
   @Test
   public void IfSeedlessthan50Works() {
-    String input = "mosaicking 50 owl owl-mosaic";
+    String input = "mosaicking 20 owl owl-mosaic";
     InputStream in = new ByteArrayInputStream(input.getBytes());
     OutputStream out = new ByteArrayOutputStream();
     StringBuilder sb = new StringBuilder();
@@ -45,7 +45,7 @@ public class DoubleEnhanceControllerTest extends EnhanceControllerTest{
     ImageView view = new ImageViewImpl();
     ImageController controller = new DoubleEnhanceController(model, view, in, out);
     controller.executeController();
-    assertEquals("Recieved 100,owl and owl-mosaic", sb.toString());
+    assertEquals("Seeds can only 50 and above.", out.toString());
   }
 
   public static class MockModel implements DoubleEnchancedInterface {

@@ -1069,4 +1069,77 @@ public class SimpleControllerTest {
     assertTrue(assertImageFiles("res/owl-dither-bmp.bmp",
             "test/images/owl-dither-bmp.bmp"));
   }
+
+  /**
+   * JUnit test to do image mosaicking for a JPG format.
+   */
+  @Test
+  public void mosaikingImagePPM() throws IOException {
+    String input = "load res/owl.ppm owl\nmosaicking 1000 owl owl-mosaic\r\n"
+        + "save test/images/owl-mosaic.ppm owl-mosaic\nexit";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    OutputStream out = new ByteArrayOutputStream();
+
+    EnhancedModelInterface model = new EnhancedModel();
+    ImageView view = new ImageViewImpl();
+    ImageController controller = new EnhanceController(model, view, in, out);
+    controller.executeController();
+    assertTrue(assertImageFiles("res/owl-mosaic.ppm",
+        "test/images/owl-mosaic.ppm"));
+  }
+
+  /**
+   * JUnit test to do image mosaicking for a JPG format.
+   */
+  @Test
+  public void mosaikingImageJPG() throws IOException {
+    String input = "load res/owl-jpg.jpg owl\nmosaicking 1000 owl owl-mosaic\r\n"
+        + "save test/images/owl-mosaic.jpg owl-mosaic\nexit";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    OutputStream out = new ByteArrayOutputStream();
+
+    EnhancedModelInterface model = new EnhancedModel();
+    ImageView view = new ImageViewImpl();
+    ImageController controller = new EnhanceController(model, view, in, out);
+    controller.executeController();
+    assertTrue(assertImageFiles("res/owl-mosaic.jpg",
+        "test/images/owl-mosaic.jpg"));
+  }
+
+
+  /**
+   * JUnit test to do image mosaicking for a PNG format.
+   */
+  @Test
+  public void mosaikingImagePNG() throws IOException {
+    String input = "load res/owl-png.png owl\nmosaicking 1000 owl owl-mosaic\r\n"
+        + "save test/images/owl-mosaic.png owl-mosaic\nexit";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    OutputStream out = new ByteArrayOutputStream();
+
+    EnhancedModelInterface model = new EnhancedModel();
+    ImageView view = new ImageViewImpl();
+    ImageController controller = new EnhanceController(model, view, in, out);
+    controller.executeController();
+    assertTrue(assertImageFiles("res/owl-mosaic.png",
+        "test/images/owl-mosaic.png"));
+  }
+
+  /**
+   * JUnit test to do image mosaicking for a BMP format.
+   */
+  @Test
+  public void mosaikingImageBMP() throws IOException {
+    String input = "load res/owl-bmp.bmp owl\nmosaicking 1000 owl owl-mosaic\r\n"
+        + "save test/images/owl-mosaic.bmp owl-mosaic\nexit";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    OutputStream out = new ByteArrayOutputStream();
+
+    EnhancedModelInterface model = new EnhancedModel();
+    ImageView view = new ImageViewImpl();
+    ImageController controller = new EnhanceController(model, view, in, out);
+    controller.executeController();
+    assertTrue(assertImageFiles("res/owl-mosaic.bmp",
+        "test/images/owl-mosaic.bmp"));
+  }
 }

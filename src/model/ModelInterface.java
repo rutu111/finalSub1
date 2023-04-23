@@ -100,6 +100,4 @@ public interface ModelInterface {
   void combineRGB(String destFileName,
                   String redFileName, String greenFileName, String blueFileName);
 
-  void mosaicking(int seeds, String fileName, String destFileName);
-
 }

@@ -1,9 +1,10 @@
 package controller.commands;
 
 import java.io.IOException;
+import model.DoubleEnchancedModel;
 import model.ModelInterface;
 
-public class Mosaicking <T extends ModelInterface> implements CommandInterface<T>{
+public class Mosaicking <T extends DoubleEnchancedModel> implements CommandInterface<T>{
 
   private final int seeds;
   private final String fileName;

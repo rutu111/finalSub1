@@ -83,7 +83,6 @@ public class Controller implements ImageController {
     knownCommands.put("rgb-split", c -> new Split<>(c[1], c[2], c[3], c[4]));
     knownCommands.put("rgb-combine", c -> new Combine<>(c[1], c[2], c[3], c[4]));
     knownCommands.put("greyscale", c -> new VisualizeComponent<>(c[1], c[2], c[3]));
-    knownCommands.put("mosaicking", c -> new Mosaicking<>((int) Double.parseDouble(c[1]), c[2], c[3]));
     knownCommands.put("save", c -> {
       return new Save<>(c[1], c[2], getExtension(c[1]));
     });

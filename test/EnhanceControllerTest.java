@@ -210,7 +210,6 @@ public class EnhanceControllerTest extends ControllerTest {
 
     @Override
     public DefaultCategoryDataset histogram(String fileName) {
-
       return null;
     }
 

@@ -30,7 +30,6 @@ public class SimpleController {
    */
   public static void main(String[] args) {
 
-
     String variableName = null;
     String value = null;
     EnhancedModelInterface model = new EnhancedModel();
@@ -42,18 +41,15 @@ public class SimpleController {
           // This is a command line argument
           variableName = args[i].substring(1); // Remove the leading '-'
           if (variableName.equals("file")) {
-
             value = args[++i];
             String input = "run " + value + "\r\nexit";
             InputStream in = new ByteArrayInputStream(input.getBytes());
-
             ImageController controller = new EnhanceController(model, view, in, System.out);
             controller.executeController();
           } else {
             ImageController controller = new EnhanceController(model, view, System.in, System.out);
             controller.executeController();
           }
-
         }
       }
     } else {

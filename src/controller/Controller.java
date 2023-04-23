@@ -147,7 +147,7 @@ public class Controller implements ImageController {
       view.displayOutput(this.out, "Command run successfully!");
 
     } catch (IllegalArgumentException ex) {
-      view.displayOutput(this.out, "Invalid PPM file: plain RAW file should begin with P3"
+      view.displayOutput(this.out, ex.getMessage()
               + System.lineSeparator());
     } catch (FileNotFoundException ex) {
       view.displayOutput(this.out, "File not found :"

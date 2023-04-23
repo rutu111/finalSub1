@@ -696,18 +696,6 @@ public class JFrameViewImpl extends JFrame implements JFrameView {
           }
         }
 
-        features.manipulateImage(commandText);
-        dialog.setVisible(false);
-        resetDialogue();
-      } else {
-        showErrorMsg("Please select a manipulation methods!");
-      }
-    });
-
-    manipulateButton.addActionListener(evt -> {
-      if (operations != null) {
-        String commandText = operations.getCmd();
-
         if (operations == OPERATIONS.Mosaicking) {
           try {
             int getVal = (int) Double.parseDouble(mosacVal.getText());
@@ -725,6 +713,7 @@ public class JFrameViewImpl extends JFrame implements JFrameView {
         showErrorMsg("Please select a manipulation methods!");
       }
     });
+
 
     this.addKeyListener(new KeyListener() {
 

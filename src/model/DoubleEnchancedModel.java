@@ -49,15 +49,19 @@ public class DoubleEnchancedModel extends EnhancedModel implements DoubleEnchanc
   public void mosaicking(int seeds, String fileName, String destFileName)
       throws IllegalArgumentException {
     //1. seeds:
-    //throw exception if seed < 1000. This is the minimum value possible.
+    //throw exception if seed < 50. This is the minimum value possible.
     // with the number given, generate n seeds of row and col positions of the image.
     //save each seed as a cluster object.
 
-    if (seeds < 1000) {
-      throw new IllegalArgumentException("Seeds can only 1000 and above. ");
+    if (seeds < 50) {
+      throw new IllegalArgumentException("Seeds can only 50 and above. ");
     }
 
     ImageInterface image = database.getImage(fileName).cloneImage();
+
+    if (image.getHeight()*image.getWidth() < seeds) {
+      throw new IllegalArgumentException("Seeds are greater than image size! ");
+    }
 
     List<ClusterObject> randomSeeds = new ArrayList<>();
 
